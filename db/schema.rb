@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813185209) do
+ActiveRecord::Schema.define(version: 20160813225033) do
 
   create_table "committees", force: :cascade do |t|
     t.string "name"
+    t.text   "description"
   end
 
-  create_table "committees_users", id: false, force: :cascade do |t|
-    t.integer "committee_id", null: false
-    t.integer "user_id",      null: false
-    t.index ["committee_id", "user_id"], name: "index_committees_users_on_committee_id_and_user_id"
-    t.index ["user_id", "committee_id"], name: "index_committees_users_on_user_id_and_committee_id"
+  create_table "committees_members", id: false, force: :cascade do |t|
+    t.integer "committee_id",                 null: false
+    t.integer "user_id",                      null: false
+    t.boolean "chair",        default: false
+    t.index ["committee_id", "user_id"], name: "index_committees_members_on_committee_id_and_user_id"
+    t.index ["user_id", "committee_id"], name: "index_committees_members_on_user_id_and_committee_id"
   end
 
   create_table "users", force: :cascade do |t|
