@@ -1,2 +1,12 @@
 User.create!(email: "caroline.h.jobe@gmail.com", password: "password")
 User.create!(email: "spencer.jobe@gmail.com", password: "password")
+
+Committee.create!(name: "Skater Relations")
+Committee.create!(name: "Recruiting")
+Committee.create!(name: "Training")
+Committee.create!(name: "Bout Production")
+Committee.create!(name: "Merchandise")
+Committee.create!(name: "Sponsorship")
+Committee.create!(name: "Public Relations/Web/Print Media")
+Committee.create!(name: "Events and Fundraising")
+Committee.create!(name: "Safety")
