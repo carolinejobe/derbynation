@@ -1,7 +1,7 @@
-<ul><%= link_to 'Calendar' %></ul>
+<ul><%= link_to 'Calendar', "https://calendar.google.com/calendar/embed?src=qd32g5f8b5bnbbeh71puhfqvmc%40group.calendar.google.com&ctz=America/New_York", target: "_blank" %></ul>
 <ul><%= link_to 'Attendance' %>(75%)</ul>
 <ul><%= link_to 'All Committees', committees_path %></ul>
 <ul>My Committees:</ul>
 <% @my_committees.each do |committee| %>
-  <ul><%= link_to committee.name %></ul>
+  <ul><small><%= link_to committee.name %></small></ul>
 <% end %>
