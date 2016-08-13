@@ -1,3 +1,7 @@
-<ul><%= link_to 'Committees', committees_path %></ul>
-<ul><%= link_to 'Attendance' %>(75%)</ul>
 <ul><%= link_to 'Calendar' %></ul>
+<ul><%= link_to 'Attendance' %>(75%)</ul>
+<ul><%= link_to 'All Committees', committees_path %></ul>
+<ul>My Committees:</ul>
+<% @my_committees.each do |committee| %>
+  <ul><%= link_to committee.name %></ul>
+<% end %>

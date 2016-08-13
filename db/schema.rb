@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813174428) do
+ActiveRecord::Schema.define(version: 20160813185209) do
 
   create_table "committees", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "committees_users", id: false, force: :cascade do |t|
+    t.integer "committee_id", null: false
+    t.integer "user_id",      null: false
+    t.index ["committee_id", "user_id"], name: "index_committees_users_on_committee_id_and_user_id"
+    t.index ["user_id", "committee_id"], name: "index_committees_users_on_user_id_and_committee_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -23,6 +30,14 @@ ActiveRecord::Schema.define(version: 20160813174428) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "derby_first_name"
+    t.string   "derby_last_name"
+    t.integer  "derby_number"
+    t.integer  "wftda_number"
+    t.string   "status"
+    t.string   "team"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
