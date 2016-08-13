@@ -47,7 +47,6 @@ body {
 .test-big-title {
     font-size:42px;
     font-weight:normal;
-    color:rgb(110,110,120);
 }
 
 .test-title {
@@ -83,9 +82,8 @@ body {
 
 .test-button {
     border-radius: 4px;
-    background-color:rgb(220,220,230);
     color:rgb(0,0,0);
-    border: 1px solid rgb(128,128,138);
+    border: 1px solid;
     display:block;
     padding:16px;
     padding-left:24px;
@@ -93,14 +91,12 @@ body {
     cursor:pointer;
     font-size:16px;
 }
-.test-button:hover {
-    background:rgb(230,230,240);
-}
+
 .test-textbox {
     border-radius: 3px;
     background-color:white;
     color:rgb(0,0,10);
-    border: 1px solid rgb(128,128,138);
+    border: 1px solid;
     display:block;
     padding:8px;
     font-size:16px;
