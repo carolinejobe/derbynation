@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'index#index'
   resources :users
+  resources :committees
 end
